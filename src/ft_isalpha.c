@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/03 19:19:41 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/10 17:27:08 by sungurea         ###   ########.fr       */
+/*   Created: 2018/07/16 19:26:43 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/10 20:33:38 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int		ft_isalpha(int c)
 {
-	while (n--)
-		*(unsigned char*)dst++ = *(unsigned char*)src++;
-	return (dst);
+	if ((c > 64 && c < 91) || (c > 96 && c < 123))
+		return (1);
+	return (0);
 }

@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/03 19:19:41 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/10 17:27:08 by sungurea         ###   ########.fr       */
+/*   Created: 2018/08/10 17:38:55 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/10 22:10:54 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strchr(char *s, int c)
 {
-	while (n--)
-		*(unsigned char*)dst++ = *(unsigned char*)src++;
-	return (dst);
+	while (*s++ && *s != (char)c)
+		s++;
+	if (!*s)
+		return NULL;
+	return (s);
 }

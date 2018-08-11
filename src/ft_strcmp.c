@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/03 19:19:41 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/10 17:27:08 by sungurea         ###   ########.fr       */
+/*   Created: 2018/07/16 16:48:42 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/10 20:08:59 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int		ft_strcmp(char *s1, char *s2)
 {
-	while (n--)
-		*(unsigned char*)dst++ = *(unsigned char*)src++;
-	return (dst);
+	int i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] && s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

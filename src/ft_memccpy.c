@@ -6,13 +6,13 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/03 19:46:01 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/03 20:21:43 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/10 17:28:04 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,
+void	*ft_memccpy(void *dst, const void *src, int c,
 	size_t n)
 {
 	while (n--)

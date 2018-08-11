@@ -1,0 +1,17 @@
+{
+    "42header.username": "sungurea",
+    "[yaml]": {
+        "editor.insertSpaces": false,
+        "editor.tabSize": 4,
+        "editor.autoIndent": false
+    },
+    "editor.tokenColorCustomizations": {
+        "comments": "#0d9b00",
+        "functions": "#fcff5c",
+        "numbers": "#42ce7d",
+        "strings": "#f76b40"        
+    },
+    "files.associations": {
+        "libft.h": "c"
+    }
+}

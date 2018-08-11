@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/03 19:19:41 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/10 17:27:08 by sungurea         ###   ########.fr       */
+/*   Created: 2018/08/10 20:51:00 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/10 22:09:30 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int		ft_isalnum(int c)
 {
-	while (n--)
-		*(unsigned char*)dst++ = *(unsigned char*)src++;
-	return (dst);
+	return (ft_isalpha(c) + ft_isdigit(c));
 }

@@ -6,18 +6,18 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/08 15:25:45 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/08 18:23:47 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/10 22:04:09 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int     ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-    unsigned int len;
+	size_t len;
 
-    len = 0;
-    while (*s++)
-        len++;
-    return (len);
+	len = 0;
+	while (*s++)
+		len++;
+	return (len);
 }

@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/03 19:19:41 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/10 17:27:08 by sungurea         ###   ########.fr       */
+/*   Created: 2018/07/16 09:59:55 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/10 20:24:26 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_atoi(char *str)
 {
-	while (n--)
-		*(unsigned char*)dst++ = *(unsigned char*)src++;
-	return (dst);
+	int n;
+	int neg;
+
+	while (*str == '\r' || *str == '\t' || *str == '\n' || *str == '\f'
+		|| *str == '\v' || *str == ' ')
+		str++;
+	neg = *str == '-';
+	n = 0;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str && (*str >= '0' && *str <= '9'))
+		n = n * 10 + (*(str++) - '0');
+	return (n * (1 + -2 * neg));
 }
