@@ -6,9 +6,12 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/03 17:06:06 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/10 22:10:03 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/20 00:41:31 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef LIBFT_H
+# define LIBFT_H
 
 #include <string.h>
 #include <unistd.h>
@@ -44,4 +47,11 @@ char	*ft_strrchr(char *s, int c);
 char	*ft_strstr(char *str, char *to_find);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
+void	ft_strdel(char **as);
+void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
 
+#endif

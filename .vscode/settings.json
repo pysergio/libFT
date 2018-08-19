@@ -12,6 +12,7 @@
         "strings": "#f76b40"        
     },
     "files.associations": {
-        "libft.h": "c"
+        "libft.h": "c",
+        "unistd.h": "c"
     }
 }

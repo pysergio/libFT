@@ -6,68 +6,56 @@
 #    By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/26 14:33:05 by pguthaus          #+#    #+#              #
-#    Updated: 2018/08/11 03:11:33 by sungurea         ###   ########.fr        #
+#    Updated: 2018/08/20 00:50:22 by sungurea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft
+include libft.mk
 
-CC = cc# C compiler
-CFLAGS = -I ./include/ -Wall -Werror -Wextra# C compiler flags
+SRC_DIR	= ./src
+INC_DIR	= ./includes
+OBJ_DIR	= ./obj
+
+RAW_SRC	:= $(shell find $(SRC_DIR) -type f | grep -E "\.c$$")
+RAW_DIRS:= $(shell find $(SRC_DIR) -type d -mindepth 1)
+SRCDIRS = $(RAW_DIRS:./src/%=%)
+SRC		= $(RAW_SRC:./src/%=%)
+OBJ		= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
+
+CC		= gcc
+CFLAGS	= -Wall -Wextra -Werror -std=c99
+CFLAGS += -O3 -march=native -pipe -flto
+
+.PHONY: all clean fclean re
 
 RESET = \033[0m
 PURPLE = \033[1;35m
 GREEN = \033[1;32m
 YELLOW = \033[1;33m
 
-# Paths
-# Paths
+all: $(OBJ_DIR) $(FT_NAME)
 
-SRCS =		src/ft_bzero.c 	\
-			src/ft_memccpy.c\
-			src/ft_memchr.c \
-			src/ft_memcpy.c \
-			src/ft_memmove.c\
-			src/ft_memset.c	\
-			src/ft_memcmp.c \
-			src/ft_atoi.c 	\
-			src/ft_isalnum.c\
-			src/ft_isalpha.c\
-			src/ft_isascii.c\
-			src/ft_isdigit.c\
-			src/ft_isprint.c\
-			src/ft_strcat.c \
-			src/ft_strchr.c \
-			src/ft_strcmp.c \
-			src/ft_strcpy.c \
-			src/ft_strdup.c \
-			src/ft_strlcat.c\
-			src/ft_strlen.c \
-			src/ft_strncat.c\
-			src/ft_strncmp.c\
-			src/ft_strncpy.c\
-			src/ft_strnstr.c\
-			src/ft_strrchr.c\
-			src/ft_strstr.c \
-			src/ft_tolower.c\
-			src/ft_toupper.c
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+	mkdir -p $(addprefix $(OBJ_DIR)/,$(SRCDIRS))
 
-OBJS = $(SRCS:.c=.o)
+$(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) $(FT_INC) -o $@ -c $<
 
-all: $(NAME)
+$(FT_NAME): $(OBJ)
+	ar rc $(FT_NAME) $(OBJ)
+	ranlib $(FT_NAME)
 
-$(NAME):	$(OBJS)
-			$(CC) -o $(NAME) $(OBJS) $(CFLAGS)
 clean:
 	@echo "$(YELLOW)Deleting objects files...$(RESET)"
-	@rm -rf $(OBJS)
-	@echo "$(GREEN)Object files (based in 'src/') have been deleted !$(RESET)"
+	rm -rf $(OBJ_DIR)
+	@echo "$(GREEN)Object files (based in '$(OBJ_DIR)') have been deleted !$(RESET)"
 
 fclean: clean
 	@echo "$(YELLOW)Deleting executable...$(RESET)"
-	@rm -f $(NAME)
-	@echo "$(GREEN)The executable '$(NAME)' has been deleted !$(RESET)"
+	rm -f $(FT_NAME)
+	@echo "$(GREEN)The executable '$(FT_NAME)' has been deleted !$(RESET)"
 
-re: fclean all
-
-.PHONY: re fclean clean
+re:
+	@$(MAKE) fclean --no-print-directory
+	@$(MAKE) all --no-print-directory
