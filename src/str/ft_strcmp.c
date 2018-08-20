@@ -6,11 +6,11 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 16:48:42 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/10 20:08:59 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/20 17:20:37 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strcmp(char *s1, char *s2)
+int		ft_strcmp(const char *s1, const char *s2)
 {
 	int i;
 

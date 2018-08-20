@@ -6,7 +6,7 @@
 #    By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/19 23:06:42 by sungurea          #+#    #+#              #
-#    Updated: 2018/08/19 23:07:12 by sungurea         ###   ########.fr        #
+#    Updated: 2018/08/20 17:23:51 by sungurea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ FT_LIB		:= $(L_FT)/$(FT_NAME)
 
 # Global variables for compilation
 ifndef LIB_LNK
-LIB_LNK		:=
+LIB_LNK		:= 
 LIB_INC		:=
 endif
 

@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/16 10:06:19 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/20 17:07:48 by sungurea         ###   ########.fr       */
+/*   Created: 2018/08/20 16:45:47 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/20 17:49:06 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+int main(int argc, char const *argv[])
 {
-	size_t i;
-
-	i = 0;
-	while (i < n && src[i] != '\0')
+	
+	char **out;
+	printf("started ... \n");
+	if (argc == 3)
 	{
-		dest[i] = src[i];
-		i++;
+		out = ft_strsplit(argv[1], *argv[2]);
+		while (*out)
+			printf("[%s] ", (*out)++);
 	}
-	dest[i] = '\0';
-	return (dest);
+	return 0;
 }

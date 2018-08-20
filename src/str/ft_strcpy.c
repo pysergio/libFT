@@ -6,11 +6,11 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 01:13:25 by sungurea          #+#    #+#             */
-/*   Updated: 2018/07/17 14:01:45 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/20 17:15:34 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
 	int i;
 

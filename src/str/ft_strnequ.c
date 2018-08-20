@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/16 10:06:19 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/20 17:07:48 by sungurea         ###   ########.fr       */
+/*   Created: 2018/08/20 13:06:18 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/20 17:00:21 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
 	size_t i;
 
-	i = 0;
-	while (i < n && src[i] != '\0')
-	{
-		dest[i] = src[i];
+		i = 0;
+	while (s1[i] == s2[i] && i < n && s1[i] && s2[i])
 		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	if (s1[i] == s2[i])
+		return (1);
+	return (0);
 }

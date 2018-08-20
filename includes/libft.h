@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/03 17:06:06 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/20 00:41:31 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/20 17:20:50 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,13 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+# define FT_SEP(x) (x == ' ' || x == '\t' || x == '\n')
+# define FT_ABS(x) (((x) < 0) ? -(x) : (x))
+# define FT_NEG(x) (((x) < 0) ? 1 : 0)
+# define FT_POS(x) (((x) > 0) ? 1 : 0)
+# define FT_MIN(a, b) ((a) < (b) ? (a) : (b))
+# define FT_MAX(a, b) ((a) > (b) ? (a) : (b))
+# define FT_DIST(a, b) (FT_ABS((a) - (b)))
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_memccpy(void *restrict dst, const void *restrict src, int c,
@@ -32,16 +39,16 @@ int		ft_isalpha(int c);
 int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
-char	*ft_strcat(char *dest, char *src);
+char	*ft_strcat(char *dest, const char *src);
 char	*ft_strchr(char *s, int c);
-int		ft_strcmp(char *s1, char *s2);
-char	*ft_strcpy(char *dest, char *src);
+int		ft_strcmp(const char *s1, const char *s2);
+char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strdup(char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
 char	*ft_strncat(char *dest, char *src, size_t nb);
 int		ft_strncmp(char *s1, char *s2, size_t len);
-char	*ft_strncpy(char *dest, char *src, size_t n);
+char	*ft_strncpy(char *dest, const char *src, size_t n);
 char	*ft_strnstr(char *str, char *to_find, size_t len);
 char	*ft_strrchr(char *s, int c);
 char	*ft_strstr(char *str, char *to_find);
@@ -53,5 +60,14 @@ char	*ft_strnew(size_t size);
 void	ft_strdel(char **as);
 void	ft_strclr(char *s);
 void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s);
+char	**ft_strsplit(char const *s, char c);
 
 #endif
