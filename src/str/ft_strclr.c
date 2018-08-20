@@ -6,14 +6,14 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 00:31:55 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/20 00:36:12 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/20 20:11:41 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_strclr(char *s)
 {
 	if (!s)
-		return;
+		return ;
 	while (*s)
 		*s++ = 0;
 }

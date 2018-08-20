@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/16 11:59:26 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/19 23:17:24 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/20 20:14:36 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strstr(char *str, char *to_find)
 	int j;
 
 	i = 0;
-    if (*to_find == '\0')
+	if (*to_find == '\0')
 		return (str);
 	while (str[i] != '\0')
 	{
@@ -31,5 +31,5 @@ char	*ft_strstr(char *str, char *to_find)
 		}
 		i++;
 	}
-	return NULL;
+	return (NULL);
 }

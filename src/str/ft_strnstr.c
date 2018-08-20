@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/10 19:41:20 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/19 23:17:12 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/20 20:15:39 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 	size_t j;
 
 	i = 0;
-    if (*to_find == '\0')
+	if (*to_find == '\0')
 		return (str);
 	while (str[i] != '\0' && i < len)
 	{
@@ -31,5 +31,5 @@ char	*ft_strnstr(char *str, char *to_find, size_t len)
 		}
 		i++;
 	}
-	return NULL;
+	return (NULL);
 }

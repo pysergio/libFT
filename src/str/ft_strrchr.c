@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/10 18:05:50 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/19 23:17:19 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/20 20:26:04 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ char	*ft_strrchr(char *s, int c)
 	while (--l >= 0)
 		if (s[l] == (char)c)
 			return (&s[l]);
-	return NULL;
+	return (NULL);
 }

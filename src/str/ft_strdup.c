@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/18 12:47:18 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/19 23:16:38 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/20 20:18:07 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_strdup(char *s)
 	int		i;
 
 	i = 0;
-	while (s[i++] != '\0');
+	while (s[i] != '\0')
+		i++;
 	res = (char*)malloc(sizeof(char) * (i + 1));
 	i = 0;
 	while (s[i] != '\0')

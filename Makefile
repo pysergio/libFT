@@ -6,7 +6,7 @@
 #    By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/26 14:33:05 by pguthaus          #+#    #+#              #
-#    Updated: 2018/08/20 00:50:22 by sungurea         ###   ########.fr        #
+#    Updated: 2018/08/20 20:54:04 by sungurea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,5 +57,5 @@ fclean: clean
 	@echo "$(GREEN)The executable '$(FT_NAME)' has been deleted !$(RESET)"
 
 re:
-	@$(MAKE) fclean --no-print-directory
-	@$(MAKE) all --no-print-directory
+	$(MAKE) fclean --no-print-directory
+	$(MAKE) all --no-print-directory
