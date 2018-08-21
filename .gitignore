@@ -45,6 +45,3 @@
 # Kernel Module Compile Results
 *.mod*
 *.cmd
-
-# Others
-.DS_Store*

@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/03 20:48:06 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/21 17:33:10 by sungurea         ###   ########.fr       */
+/*   Created: 2018/08/21 17:09:06 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/21 17:42:06 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char			*buf;
-	unsigned int	i;
+	t_list *newlst;
 
-	if (*(unsigned char*)dst == 0 || *(unsigned char*)src == 0)
-		return (0);
-	if (!(buf = malloc(n)))
+	newlst = (t_list*)malloc(sizeof(t_list));
+	if (newlst == NULL)
 		return (NULL);
-	i = -1;
-	ft_memcpy(buf, src, n);
-	while (((char *)dst)[i] && ++i < n)
-		((char *)dst)[i] = buf[i];
-	free(buf);
-	return (dst);
+	if (content == NULL)
+	{
+		newlst->content = NULL;
+		newlst->content_size = 0;
+	}
+	else
+	{
+		if ((newlst->content = ft_memalloc(content_size)) == NULL)
+			return (NULL);
+		ft_memcpy(newlst->content, content, content_size);
+		newlst->content_size = content_size;
+	}
+	newlst->next = NULL;
+	return (newlst);
 }

@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/07/17 19:30:29 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/21 18:51:39 by sungurea         ###   ########.fr       */
+/*   Created: 2018/08/21 17:55:36 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/21 18:06:37 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar(char c)
+void ft_lstadd(t_list **alst, t_list *new)
 {
-	ft_putchar_fd(c, 1);
+	if (!new || !alst)
+		return ;
+	else if (*alst)
+		new->next = *alst;
+	*alst = new;
 }
