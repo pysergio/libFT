@@ -19,3 +19,24 @@
     "editor.insertSpaces": false,
     "editor.tabCompletion": true
 }
+"While": {
+    "prefix": "wh",
+    "body": [
+      "while (${1:/* condition */})",
+      "{",
+      "\t${0:/* code */}",
+      "}"
+    ],
+    "description": "Norminette"
+},
+"ft_functions": {
+    "prefix": "ft_",
+    "body": [
+      "#include \"libft.h\"\n",
+      "${1:void}\t$2ft_${3:/* fx name*/}(${4:*/ arguments */})",
+      "{",
+      "\t${0:/* code */}",
+      "}"
+    ],
+    "description": "Norminette"
+}
