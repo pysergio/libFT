@@ -13,7 +13,8 @@
     },
     "files.associations": {
         "libft.h": "c",
-        "unistd.h": "c"
+        "unistd.h": "c",
+        "cstdlib": "c"
     },
     "editor.insertSpaces": false,
     "editor.tabCompletion": true

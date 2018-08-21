@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/20 14:19:14 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/21 12:45:56 by sungurea         ###   ########.fr       */
+/*   Created: 2018/08/21 12:47:05 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/21 14:55:08 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+char	*ft_itoa(int n)
 {
+	int		d;
 	int		i;
-	int		j;
-	int		k;
-	char	**out;
+	char	*out;
 
-	if (!s)
-		return (NULL);
-	i = -1;
-	j = 1;
-	while (s[++i])
-		if (s[i] != c && (s[i + 1] == c || !(s[i + 1])))
-			j++;
-	out = (char**)malloc(sizeof(char*) * j);
-	i = -1;
-	k = -1;
-	while (s[++i] && !(j = 0))
+	if (n == -2147483648)
+		return ("-2147483648");
+	out = ft_strnew(12);
+	if(!(i = 0) && (d = 1) && FT_NEG(n) && (n = FT_ABS(n)))
+		out[i++] = '-';
+	while (n / d > 10)
+		d *= 10;
+	while (d)
 	{
-		while (s[i + j] && s[i + j] != c)
-			j++;
-		if (j)
-			out[++k] = ft_strsub(s, i, j);
-		i += j;
+		out[i++] = n / d + 48;
+		n %= d;
+		d /= 10;
 	}
 	return (out);
 }

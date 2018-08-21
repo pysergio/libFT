@@ -1,41 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/20 14:19:14 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/21 12:45:56 by sungurea         ###   ########.fr       */
+/*   Created: 2018/08/21 15:32:49 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/21 15:40:19 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_strsplit(char const *s, char c)
+void	ft_putendl_fd(char const *s, int fd)
 {
-	int		i;
-	int		j;
-	int		k;
-	char	**out;
-
-	if (!s)
-		return (NULL);
-	i = -1;
-	j = 1;
-	while (s[++i])
-		if (s[i] != c && (s[i + 1] == c || !(s[i + 1])))
-			j++;
-	out = (char**)malloc(sizeof(char*) * j);
-	i = -1;
-	k = -1;
-	while (s[++i] && !(j = 0))
-	{
-		while (s[i + j] && s[i + j] != c)
-			j++;
-		if (j)
-			out[++k] = ft_strsub(s, i, j);
-		i += j;
-	}
-	return (out);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

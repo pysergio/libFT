@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdel.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/20 00:02:42 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/21 08:38:50 by sungurea         ###   ########.fr       */
+/*   Created: 2018/08/21 09:55:22 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/21 15:30:35 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
-void	ft_memdel(void **ap)
-{
-	free(*ap);
-	*ap = NULL;
+int main (int argc, char **argv)
+{	
+	char *out;
+	int i = -19;
+	out = ft_itoa(atoi(argv[argc -1]));
+
+	printf("str = %s\n", out);
+	ft_putnbr(atoi(argv[argc -1]));
+	ft_putstr("\nIt's work\n");
 }
+

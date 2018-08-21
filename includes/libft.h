@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/03 17:06:06 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/20 20:24:59 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/21 15:40:02 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,14 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
+char	*ft_itoa(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putstr_fd(const char *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putchar(char c);
+void	ft_putnbr(int n);
+void	ft_putstr(char *s);
+void	ft_putendl(char const *s);
 
 #endif
