@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   z.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/03 19:19:41 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/23 16:02:41 by sungurea         ###   ########.fr       */
+/*   Created: 2018/08/22 10:24:56 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/22 11:09:58 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <unistd.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int		main()
 {
-	int i;
-	int m;
-	unsigned long  *cdst = dst;
-	unsigned long  *csrc = src;
+	char i[4];
 
-	*csrc = src;
-	*cdst = dst;
-	m = n / sizeof(long);
-	i = -1;
-	while(++i < m)
-		*(cdst++) = *(csrc++);
-	i = -1;
-	m = n % sizeof(long);
-	while(++i < m)
-		*(unsigned char*)(cdst++) = *(unsigned char*)(csrc++);
-	return (dst);
+	*i = "Д";
+
+		printf("d = %s, c = \n",i);
+	return (0);
 }
