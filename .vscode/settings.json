@@ -14,7 +14,9 @@
     "files.associations": {
         "libft.h": "c",
         "unistd.h": "c",
-        "cstdlib": "c"
+        "cstdlib": "c",
+        "stdio.h": "c",
+        "stddef.h": "c"
     },
     "editor.insertSpaces": false,
     "editor.tabCompletion": true
