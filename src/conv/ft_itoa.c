@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 12:47:05 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/21 14:55:08 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/28 14:20:28 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,13 @@ char	*ft_itoa(int n)
 	int		i;
 	char	*out;
 
+	if ((out = ft_strnew(11)) == NULL)
+		return (NULL);
 	if (n == -2147483648)
-		return ("-2147483648");
-	out = ft_strnew(12);
-	if(!(i = 0) && (d = 1) && FT_NEG(n) && (n = FT_ABS(n)))
+		return (out = "-2147483648");
+	d = 1;
+	i = 0;
+	if (FT_NEG(n) && (n = FT_ABS(n)))
 		out[i++] = '-';
 	while (n / d > 10)
 		d *= 10;

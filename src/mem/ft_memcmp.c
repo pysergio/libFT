@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/08 15:01:01 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/20 20:11:09 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/28 14:01:55 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,15 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
+	int		cmp;
 
-	i = 0;
-	while (i < n)
+	i = -1;
+	while (++i < n)
 	{
-		if (((const char *)s1)[i] != ((const char *)s2)[i])
-			return (((const char *)s1)[i] - ((const char *)s2)[i]);
-		i++;
+		cmp = *(unsigned char *)s1++ - *(unsigned char *)s2++;
+		if (cmp)
+			return (cmp);
 	}
-	return (0);
+	return (cmp);
 }

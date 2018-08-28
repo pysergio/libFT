@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 12:49:36 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/20 17:11:36 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/27 17:48:36 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*out;
 
 	size = ft_strlen(s);
-	out = (char*)malloc(sizeof(char) * (size + 1));
+	out = ft_strnew(size);
 	if (out == NULL)
 		return (NULL);
 	i = 0;

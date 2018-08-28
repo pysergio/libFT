@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/21 17:09:06 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/21 17:42:06 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/28 10:10:31 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	else
 	{
-		if ((newlst->content = ft_memalloc(content_size)) == NULL)
+		if ((newlst->content = malloc(content_size)) == NULL)
 			return (NULL);
 		ft_memcpy(newlst->content, content, content_size);
 		newlst->content_size = content_size;

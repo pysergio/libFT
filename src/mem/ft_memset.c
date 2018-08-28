@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/03 17:22:58 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/19 23:26:17 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/27 14:59:52 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	while (n--)
-		*(unsigned char*)s++ = c;
+		((unsigned char*)s)[n] = c;
 	return (s);
 }

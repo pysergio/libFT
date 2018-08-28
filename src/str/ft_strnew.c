@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 00:11:12 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/20 00:22:34 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/27 23:21:13 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_strnew(size_t size)
 	size_t	i;
 
 	i = 0;
-	str = (char*)malloc(sizeof(char) * size + 1);
+	if ((str = (char*)malloc(sizeof(char) * size + 1)) == NULL)
+		return (NULL);
 	while (i <= size)
 		str[i++] = 0;
 	return (str);

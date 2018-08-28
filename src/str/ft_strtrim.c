@@ -6,7 +6,7 @@
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/20 13:16:36 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/20 20:07:38 by sungurea         ###   ########.fr       */
+/*   Updated: 2018/08/28 21:56:38 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,13 @@
 char	*ft_strtrim(char const *s)
 {
 	char	*out;
-	int		size;
-	int		i;
+	char	*last;
 
-	if (!s)
-		return (NULL);
-	size = ft_strlen(s);
-	while (FT_SEP(s[size]))
-		size--;
-	i = 0;
-	while (FT_SEP(s[i]))
-		i++;
-	if (FT_NEG(size - i) || !(out = ft_strnew(size - i)))
-		return (NULL);
-	return (ft_strncpy(out, &s[i], size - i));
+	while (*s && FT_SEP(*s))
+		s++;
+	out = ft_strdup(s);
+	last = out + ft_strlen(out) - 1;
+	while (last > out && FT_SEP(*last))
+		*last-- = 0;
+	return (out);
 }

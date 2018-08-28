@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   z.c                                                :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/22 10:24:56 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/22 11:09:58 by sungurea         ###   ########.fr       */
+/*   Created: 2018/08/27 18:40:48 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/28 22:23:58 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
+#include "libft.h"
 
-int		main()
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	char i[4];
+	t_list	*elem;
 
-	*i = "Д";
-
-		printf("d = %s, c = \n",i);
-	return (0);
+	if (!lst)
+		return (NULL);
+	if (!(elem = (t_list *)malloc(sizeof(*elem))))
+		return (NULL);
+	elem = f(lst);
+	elem->next = ft_lstmap(lst->next, f);
+	return (elem);
 }

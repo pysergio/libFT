@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/21 09:55:22 by sungurea          #+#    #+#             */
-/*   Updated: 2018/08/21 18:51:18 by sungurea         ###   ########.fr       */
+/*   Created: 2018/08/27 18:50:40 by sungurea          #+#    #+#             */
+/*   Updated: 2018/08/27 19:12:44 by sungurea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
-int main (int argc, char **argv)
-{	
-	char *out;
-	int i = -19;
-	out = ft_itoa(atoi(argv[argc -1]));
-
-	printf("str = %s\n", out);
-	ft_putnbr(atoi(argv[argc -1]));
-	ft_putstr("\nIt's work\n");
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
+{
+	if (!lst || !f)
+		return ;
+	while (lst)
+	{
+		f(lst);
+		lst = lst->next;
+	}
 }
-

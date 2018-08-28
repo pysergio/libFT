@@ -6,7 +6,7 @@
 #    By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/07/26 14:33:05 by pguthaus          #+#    #+#              #
-#    Updated: 2018/08/21 18:49:55 by sungurea         ###   ########.fr        #
+#    Updated: 2018/08/28 14:04:13 by sungurea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,14 +26,12 @@ CC		= @gcc
 CFLAGS	= -Wall -Wextra -Werror -std=c99
 CFLAGS += -O3 -march=native -pipe -flto
 
-.PHONY: all clean fclean re
-
 RESET = \033[0m
 PURPLE = \033[1;35m
 GREEN = \033[1;32m
 YELLOW = \033[1;33m
 
-all: $(OBJ_DIR) $(FT_NAME)
+all: $(OBJ_DIR) $(NAME)
 
 $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
@@ -42,10 +40,10 @@ $(OBJ_DIR):
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) $(FT_INC) -o $@ -c $<
 
-$(FT_NAME): $(OBJ)
-	@ar rc $(FT_NAME) $(OBJ)
-	@ranlib $(FT_NAME)
-	@echo "$(GREEN)The lib '$(FT_NAME)' has been created !$(RESET)"
+$(NAME): $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo "$(GREEN)The lib '$(NAME)' has been created !$(RESET)"
 
 clean:
 	@echo "$(YELLOW)Deleting objects files...$(RESET)"
@@ -54,9 +52,11 @@ clean:
 
 fclean: clean
 	@echo "$(YELLOW)Deleting lib...$(RESET)"
-	@rm -f $(FT_NAME)
-	@echo "$(GREEN)The lib '$(FT_NAME)' has been deleted !$(RESET)"
+	@rm -f $(NAME)
+	@echo "$(GREEN)The lib '$(NAME)' has been deleted !$(RESET)"
 
 re:
-	$(MAKE) fclean --no-print-directory
-	$(MAKE) all --no-print-directory
+	$(MAKE) fclean 
+	$(MAKE) all 
+
+.PHONY: clean fclean re all 

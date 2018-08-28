@@ -6,7 +6,7 @@
 #    By: sungurea <sungurea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/19 23:06:42 by sungurea          #+#    #+#              #
-#    Updated: 2018/08/20 17:23:51 by sungurea         ###   ########.fr        #
+#    Updated: 2018/08/27 14:45:38 by sungurea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@
 
 L_FT		?= .
 
-FT_NAME		:= libft.a
+NAME		:= libft.a
 
 FT_LNK		:= -L $(L_FT) -l ft
 FT_INC		:= -I $(L_FT)/includes
-FT_LIB		:= $(L_FT)/$(FT_NAME)
+FT_LIB		:= $(L_FT)/$(NAME)
 
 # Global variables for compilation
 ifndef LIB_LNK
