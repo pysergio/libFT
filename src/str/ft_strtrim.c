@@ -17,9 +17,12 @@ char	*ft_strtrim(char const *s)
 	char	*out;
 	char	*last;
 
+	if (!(s))
+		return (NULL);
 	while (*s && FT_SEP(*s))
 		s++;
-	out = ft_strdup(s);
+	if (!(out = ft_strdup(s)))
+		return (NULL);
 	last = out + ft_strlen(out) - 1;
 	while (last > out && FT_SEP(*last))
 		*last-- = 0;
